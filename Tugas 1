@@ -1,0 +1,89 @@
+public abstract class Kendaraan {
+    protected int kecepatan;
+    protected String bahanBakar;
+ 
+    public Kendaraan(int kecepatan, String bahanBakar) {
+        this.kecepatan = kecepatan;
+        this.bahanBakar = bahanBakar;
+    }
+ 
+    public abstract void mulai();
+ 
+    public abstract void berhenti();
+ 
+    public void tampilkanInfo() {
+        System.out.println("Kecepatan: " + kecepatan + " km/jam");
+        System.out.println("Bahan Bakar: " + bahanBakar);
+    }
+}
+ 
+public class Mobil extends Kendaraan {
+    // Konstruktor
+    public Mobil(int kecepatan, String bahanBakar) {
+        super(kecepatan, bahanBakar);
+    }
+ 
+    @Override
+    public void mulai() {
+        System.out.println("Mobil dihidupkan");
+    }
+
+    @Override
+    public void berhenti() {
+        System.out.println("Mobil dihentikan");
+    }
+}
+ 
+public class Motor extends Kendaraan {
+    public Motor(int kecepatan, String bahanBakar) {
+        super(kecepatan, bahanBakar);
+    }
+ 
+    @Override
+    public void mulai() {
+        System.out.println("Motor dihidupkan");
+    }
+ 
+    @Override
+    public void berhenti() {
+        System.out.println("Motor dihentikan");
+    }
+}
+ 
+ 
+public class Bus extends Kendaraan {
+    // Konstruktor
+    public Bus(int kecepatan, String bahanBakar) {
+        super(kecepatan, bahanBakar);
+    }
+ 
+    @Override
+    public void mulai() {
+        System.out.println("Bus dihidupkan");
+    }
+ 
+    @Override
+    public void berhenti() {
+        System.out.println("Bus dihentikan");
+    }
+}
+ 
+public class Main {
+    public static void main(String[] args) {
+        // Membuat objek Mobil
+        Mobil mobil = new Mobil(130, "Bensin Pertamax");
+        mobil.mulai();
+        mobil.tampilkanInfo();
+        mobil.berhenti();
+
+        Motor motor = new Motor(80, "Bensin Pertalite");
+        motor.mulai();
+        motor.tampilkanInfo();
+        motor.berhenti();
+ 
+        Bus bus = new Bus(100, "Diesel Solar");
+        bus.mulai();
+        bus.tampilkanInfo();
+        bus.berhenti();
+    }
+}
